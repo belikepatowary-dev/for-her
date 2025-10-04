@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Special Page for Nitashree</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(120deg, #f6d365, #fda085);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      color: #fff;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    h1 {
+      font-size: 3em;
+      text-shadow: 2px 2px #ff7e5f;
+      animation: glow 2s infinite alternate;
+    }
+
+    @keyframes glow {
+      from { text-shadow: 2px 2px #ff7e5f; }
+      to { text-shadow: 4px 4px #ffe0b2; }
+    }
+
+    .compliment {
+      font-size: 1.5em;
+      margin: 20px;
+      font-weight: bold;
+      animation: pop 1s infinite alternate;
+    }
+
+    @keyframes pop {
+      from { transform: scale(1); }
+      to { transform: scale(1.05); }
+    }
+
+    img {
+      margin-top: 20px;
+      border-radius: 15px;
+      width: 300px;
+      height: auto;
+      box-shadow: 0 0 20px rgba(0,0,0,0.3);
+      transition: transform 0.3s;
+    }
+
+    img:hover {
+      transform: scale(1.05);
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 1em;
+      border: none;
+      border-radius: 10px;
+      background-color: #fff;
+      color: #ff6f61;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+
+    button:hover {
+      transform: scale(1.1);
+    }
+
+    #surprise {
+      margin-top: 15px;
+      font-size: 1.2em;
+      color: #fff;
+    }
+
+    .heart {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: red;
+      transform: rotate(45deg);
+      animation: float 5s linear infinite;
+      opacity: 0.7;
+    }
+
+    .heart:before,
+    .heart:after {
+      content: "";
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: red;
+      border-radius: 50%;
+    }
+
+    .heart:before { top: -10px; left: 0; }
+    .heart:after { left: 10px; top: 0; }
+
+    @keyframes float {
+      0% { transform: translateY(0) rotate(45deg); opacity:0.7;}
+      50% { opacity:1;}
+      100% { transform: translateY(-600px) rotate(45deg); opacity:0;}
+    }
+  </style>
+</head>
+<body>
+  <h1>Hello Nitashree!</h1>
+  <p class="compliment" id="compliment">You are amazing!</p>
+  <img src="nitashree.jpg" alt="Nitashree">
+
+  <button onclick="showSurprise()">Click for a Special Surprise 🎁</button>
+  <p id="surprise"></p>
+
+  <script>
+    // Floating hearts
+    function createHeart() {
+      const heart = document.createElement('div');
+      heart.classList.add('heart');
+      heart.style.left = Math.random() * window.innerWidth + 'px';
+      heart.style.animationDuration = 3 + Math.random() * 3 + 's';
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), 6000);
+    }
+    setInterval(createHeart, 500);
+
+    // Compliment rotation
+    const compliments = [
+      "Your smile is contagious 😄",
+      "I love how kind and thoughtful you are 💖",
+      "Your expressions are pure gold ✨",
+      "You have the cutest laugh 😍",
+      "You brighten my day just by being you 🌸",
+      "Spending time talking to you is the best part of my day 😊"
+    ];
+    let i = 0;
+    setInterval(() => {
+      document.getElementById('compliment').textContent = compliments[i];
+      i = (i + 1) % compliments.length;
+    }, 3000);
+
+    // Surprise message
+    function showSurprise() {
+      document.getElementById('surprise').textContent = "💌 Nitashree, just so you know… you are absolutely special, and anyone would be lucky to see your smile every day! 🌟";
+    }
+  </script>
+</body>
+</html>
