@@ -42,19 +42,6 @@
       to { transform: scale(1.05); }
     }
 
-    img {
-      margin-top: 20px;
-      border-radius: 15px;
-      width: 300px;
-      height: auto;
-      box-shadow: 0 0 20px rgba(0,0,0,0.3);
-      transition: transform 0.3s;
-    }
-
-    img:hover {
-      transform: scale(1.05);
-    }
-
     button {
       margin-top: 20px;
       padding: 10px 20px;
@@ -110,7 +97,6 @@
 <body>
   <h1>Hello Nitashree!</h1>
   <p class="compliment" id="compliment">You are amazing!</p>
-  <img src="nitashree.jpg" alt="Nitashree">
 
   <button onclick="showSurprise()">Click for a Special Surprise 🎁</button>
   <p id="surprise"></p>
@@ -131,6 +117,7 @@
     const compliments = [
       "Your smile is contagious 😄",
       "I love how kind and thoughtful you are 💖",
+      "Your reels always make me laugh 😂",
       "Your expressions are pure gold ✨",
       "You have the cutest laugh 😍",
       "You brighten my day just by being you 🌸",
