@@ -95,8 +95,8 @@
   </style>
 </head>
 <body>
-  <h1>Hello Nitashree!</h1>
-  <p class="compliment" id="compliment">You are amazing!</p>
+  <h1>Hello Nitashree! ✨</h1>
+  <p class="compliment" id="compliment">You are amazing! 😄</p>
 
   <button onclick="showSurprise()">Click for a Special Surprise 🎁</button>
   <p id="surprise"></p>
@@ -113,30 +113,23 @@
     }
     setInterval(createHeart, 500);
 
-    // Compliment rotation
+    // Updated flirty-friendly compliments with emojis
     const compliments = [
-      "Your smile is contagious 😄",
-      "I love how kind and thoughtful you are 💖",
-      "Your expressions are pure gold ✨",
-      "You have the cutest laugh 😍",
-      "You brighten my day just by being you 🌸",
-      "Spending time talking to you is the best part of my day 😊"
-      “Are you always this charming, or is it just when I’m around?”,
-      “I think your smile should come with a warning—it’s addictive”,
-      “You make even the most boring day feel interesting”,
-      “Stop being so effortlessly amazing—it’s distracting 😄”,
-      “I was having a normal day… then I remembered your laugh, and everything got better.”,
-      “If there was an award for cutest expressions, you’d win every time.”,
-      “I could talk to you for hours… and still feel like it’s not enough”,
-      “You have this way of making everything feel brighter—teach me your secret”,
-      “I didn’t believe in magic until I saw how you can make anyone smile”,
-      “You’re like my favorite song—I can’t get you out of my head, but I don’t mind”,
+      "Are you always this charming, or is it just when I’m around? 😉",
+      "I think your smile should come with a warning—it’s addictive 😍",
+      "You make even the most boring day feel interesting 🌸",
+      "Stop being so effortlessly amazing—it’s distracting 😄",
+      "If there was an award for cutest expressions, you’d win every time 🏆✨",
+      "I could talk to you for hours… and still feel like it’s not enough 💌",
+      "You have this way of making everything feel brighter—teach me your secret 🌟",
+      "You’re like my favorite song—I can’t get you out of my head, but I don’t mind 🎶"
     ];
+
     let i = 0;
     setInterval(() => {
       document.getElementById('compliment').textContent = compliments[i];
       i = (i + 1) % compliments.length;
-    }, 3000);
+    }, 4000);
 
     // Surprise message
     function showSurprise() {
